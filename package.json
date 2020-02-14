@@ -1,0 +1,16 @@
+{
+  "name": "vue-sizeme",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "build": "vue-cli-service build --target lib --name vue-sizeme ./src/index.js"
+  },
+  "dependencies": {
+    "@vue/composition-api": "^0.3.4",
+    "vue": "^2.6.11"
+  },
+  "devDependencies": {
+    "@vue/cli-service": "^4.2.2"
+  },
+  "main": "./dist/vue-sizeme.common.js"
+}
