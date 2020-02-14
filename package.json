@@ -1,16 +1,33 @@
 {
   "name": "vue-sizeme",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "license": "MIT",
-  "scripts": {
-    "build": "vue-cli-service build --target lib --name vue-sizeme ./src/index.js"
+  "main": "dist/bundle.cjs.js",
+  "module": "dist/bundle.esm.js",
+  "repository": "git@github.com:Datlyfe/vue-sizeme.git",
+  "author": {
+    "name": "Bouagggad Moez",
+    "email": "mrbouaggadmoez@gmail.com"
   },
-  "dependencies": {
+  "sideEffects": false,
+  "scripts": {
+    "build": "rollup -c"
+  },
+  "peerDependencies": {
     "@vue/composition-api": "^0.3.4",
     "vue": "^2.6.11"
   },
   "devDependencies": {
-    "@vue/cli-service": "^4.2.2"
+    "@babel/core": "^7.8.4",
+    "@babel/preset-env": "^7.8.4",
+    "babel-regenerator-runtime": "^6.5.0",
+    "rollup": "^1.31.0",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-inject": "^3.0.2"
   },
-  "main": "./dist/vue-sizeme.common.js"
+  "dependencies": {
+    "@vue/composition-api": "^0.3.4",
+    "vue": "^2.6.11",
+    "resize-observer-polyfill": "^1.5.1"
+  }
 }
