@@ -1,6 +1,6 @@
 {
   "name": "vue-sizeme",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "license": "MIT",
   "scripts": {
     "build": "vue-cli-service build --target lib --name vue-sizeme ./src/index.js"
