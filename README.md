@@ -21,7 +21,7 @@ Then in your component
 
 ```js
 <template>
-<div ref="root"></div>
+  <div ref="root"></div>
 </template>
 
 <script>
