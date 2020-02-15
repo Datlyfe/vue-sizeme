@@ -19,7 +19,6 @@ Vue.use(VueCompositionApi)
 
 The useWithSize hook takes an element ref as the first argument.
 
-Then in your component
 
 ```js
 <template>
