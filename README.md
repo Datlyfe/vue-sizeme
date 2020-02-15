@@ -17,7 +17,8 @@ import VueCompositionApi from '@vue/composition-api'
 Vue.use(VueCompositionApi)
 ```
 
-The useWithSize hook takes as an argumenet a ref to the element we want to track.
+The useWithSize hook takes an element ref as the first argument.
+
 Then in your component
 
 ```js
