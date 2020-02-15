@@ -7,25 +7,16 @@ import {
   Ref
 } from '@vue/composition-api'
 
-export interface IDimenstions{
-  width:number,
-  height:number
-}
 
-export interface IUseWithSizeParams{
-  elementRef:Ref<Element>,
-  onResize?:Function
-}
-
-const useWithSize = ({ elementRef, onResize } = {} as IUseWithSizeParams) => {
+export const useWithSize = (elementRef:Ref<Element>,onResize:Function) => {
   const state = reactive({
-      width: undefined,
-      height: undefined
-    } as unknown as  IDimenstions)
+      width: undefined as unknown as number,
+      height: undefined as unknown as number
+    })
   const previous = ref({
-    width: undefined,
-    height: undefined
-  } as unknown as IDimenstions)
+    width: undefined as unknown as number,
+    height: undefined as unknown as number
+  })
 
   const resizeObserver = new ResizeObserver(entries => {
     if (!Array.isArray(entries) || !entries.length) {
@@ -66,9 +57,10 @@ const useWithSize = ({ elementRef, onResize } = {} as IUseWithSizeParams) => {
     resizeObserver.unobserve(elementRef.value)
   })
 
+
   return computed(() => {
     return state
-  })
+  }).value
 }
 
 export default useWithSize

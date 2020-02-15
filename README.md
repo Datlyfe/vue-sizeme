@@ -30,9 +30,7 @@ import { ref } from '@vue/composition-api'
 export default {
   setup() {
     const root = ref(null)
-    const { width, height } = useWithSize({
-      elementRef: root
-    })
+    const { width, height } = useWithSize(root)
 
     console.log(state)
     return {

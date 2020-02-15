@@ -11,5 +11,3 @@ browserslist
 .cache
 .travis.yml
 tests
-.github
-*.d.ts
