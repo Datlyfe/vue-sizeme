@@ -17,11 +17,14 @@ import VueCompositionApi from '@vue/composition-api'
 Vue.use(VueCompositionApi)
 ```
 
+The useWithSize hook takes as an argumenet a ref to the element we want to track.
 Then in your component
 
 ```js
 <template>
-  <div ref="root"></div>
+  <div ref="root">
+    {{size}}
+  </div>
 </template>
 
 <script>
@@ -30,13 +33,12 @@ import { ref } from '@vue/composition-api'
 export default {
   setup() {
     const root = ref(null)
-    const { width, height } = useWithSize(root)
+    const size = useWithSize(root)
 
     console.log(state)
     return {
       root,
-      width,
-      height
+      size
     }
   }
 }
