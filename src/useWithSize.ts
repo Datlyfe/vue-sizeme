@@ -60,7 +60,7 @@ export const useWithSize = (elementRef:Ref<Element>,onResize:Function) => {
 
   return computed(() => {
     return state
-  }).value
+  })
 }
 
 export default useWithSize
