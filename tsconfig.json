@@ -1,0 +1,23 @@
+{
+    "compilerOptions": {
+      "declaration": true,
+      "declarationDir":"./dist",
+      "downlevelIteration": true,
+      "lib": [ "dom", "es5" ],
+      "module": "ES2015",
+      "moduleResolution": "Node",
+      "noFallthroughCasesInSwitch": true,
+      "noImplicitAny": true,
+      "noImplicitReturns": true,
+      "noImplicitThis": true,
+      "noUnusedLocals": true,
+      "noUnusedParameters": true,
+      "outDir": "dist",
+      "removeComments": true,
+      "strict": true,
+      "strictNullChecks": true,
+      "strictPropertyInitialization": true,
+    },
+    "include": ["./src/**/*.ts"],
+    "exclude":["node_modules"]
+  }

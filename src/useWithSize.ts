@@ -3,18 +3,29 @@ import {
   onMounted,
   reactive,
   onUnmounted,
-  computed
+  computed,
+  Ref
 } from '@vue/composition-api'
 
-export const useWithSize = ({ elementRef, onResize } = {}) => {
+export interface IDimenstions{
+  width:number,
+  height:number
+}
+
+export interface IUseWithSizeParams{
+  elementRef:Ref<Element>,
+  onResize?:Function
+}
+
+const useWithSize = ({ elementRef, onResize } = {} as IUseWithSizeParams) => {
   const state = reactive({
-    width: undefined,
-    height: undefined
-  })
+      width: undefined,
+      height: undefined
+    } as unknown as  IDimenstions)
   const previous = ref({
     width: undefined,
     height: undefined
-  })
+  } as unknown as IDimenstions)
 
   const resizeObserver = new ResizeObserver(entries => {
     if (!Array.isArray(entries) || !entries.length) {
@@ -61,3 +72,5 @@ export const useWithSize = ({ elementRef, onResize } = {}) => {
 }
 
 export default useWithSize
+
+

@@ -1,11 +1,16 @@
-import babel from 'rollup-plugin-babel'
 import inject from 'rollup-plugin-inject'
+import typescript2 from "rollup-plugin-typescript2";
+import { terser } from "rollup-plugin-terser";
+
+require('fs').unlink('dist/index.d.ts', (err) => {});
 
 const getConfig = polyfill => {
   const config = {
-    input: 'src/index.js',
+    input: 'src/index.ts',
     output: [],
-    plugins: [babel()],
+    plugins: [typescript2({
+      typescript:require('typescript'),
+    }),terser()],
     external: ['vue', '@vue/composition-api']
   }
 
