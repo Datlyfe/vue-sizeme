@@ -35,7 +35,7 @@ export default {
     const root = ref(null)
     const size = useWithSize(root)
 
-    console.log(state)
+    // size => {width,height}
     return {
       root,
       size
