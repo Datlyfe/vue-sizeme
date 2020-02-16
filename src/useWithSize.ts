@@ -3,19 +3,18 @@ import {
   onMounted,
   reactive,
   onUnmounted,
-  computed,
-  Ref
+  Ref,
+  toRefs
 } from '@vue/composition-api'
 
-
-export const useWithSize = (elementRef:Ref<Element>,onResize:Function) => {
+export const useWithSize = (elementRef: Ref<Element>, onResize: Function) => {
   const state = reactive({
-      width: undefined as unknown as number,
-      height: undefined as unknown as number
-    })
+    width: (undefined as unknown) as number,
+    height: (undefined as unknown) as number
+  })
   const previous = ref({
-    width: undefined as unknown as number,
-    height: undefined as unknown as number
+    width: (undefined as unknown) as number,
+    height: (undefined as unknown) as number
   })
 
   const resizeObserver = new ResizeObserver(entries => {
@@ -57,12 +56,7 @@ export const useWithSize = (elementRef:Ref<Element>,onResize:Function) => {
     resizeObserver.unobserve(elementRef.value)
   })
 
-
-  return computed(() => {
-    return state
-  })
+  return toRefs(state)
 }
 
 export default useWithSize
-
-
