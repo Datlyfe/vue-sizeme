@@ -1,11 +1,11 @@
 {
   "name": "vue-sizeme",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "license": "MIT",
   "main": "dist/bundle.cjs.js",
   "module": "dist/bundle.esm.js",
   "types": "dist/index.d.ts",
-  "files":[
+  "files": [
     "dist",
     "README.md"
   ],
